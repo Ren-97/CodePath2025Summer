@@ -60,7 +60,7 @@ collection2 = ["Kusama", "Monet", "Ofili", "Banksy"]
 print(organize_exhibition(collection1))
 print(organize_exhibition(collection2))
 
-
+# Problem 4: Gallery Subdomain Traffic
 def subdomain_visits(cpdomains):
     dict_ = collections.defaultdict(int)
     for element in cpdomains:
