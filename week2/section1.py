@@ -15,8 +15,9 @@ treasure_map2 = {
     "Island Peak": 5
 }
 
-print(total_treasures(treasure_map1)) 
-print(total_treasures(treasure_map2)) 
+# print(total_treasures(treasure_map1)) 
+# print(total_treasures(treasure_map2)) 
+
 
 # Problem 2: Pirate Message Check
 def can_trust_message(message):
@@ -29,8 +30,9 @@ def can_trust_message(message):
 message1 = "sphinx of black quartz judge my vow"
 message2 = "trust me"
 
-print(can_trust_message(message1))
-print(can_trust_message(message2))
+# print(can_trust_message(message1))
+# print(can_trust_message(message2))
+
 
 # Problem 3: Find All Duplicate Treasure Chests in an Array
 import collections
@@ -43,9 +45,10 @@ chests1 = [4, 3, 2, 7, 8, 2, 3, 1]
 chests2 = [1, 1, 2]
 chests3 = [1]
 
-print(find_duplicate_chests(chests1))
-print(find_duplicate_chests(chests2))
-print(find_duplicate_chests(chests3))
+# print(find_duplicate_chests(chests1))
+# print(find_duplicate_chests(chests2))
+# print(find_duplicate_chests(chests3))
+
 
 # Problem 4: Booby Trap
 def is_balanced(code):
@@ -63,8 +66,9 @@ def is_balanced(code):
 code1 = "arghh"
 code2 = "haha"
 
-print(is_balanced(code1)) 
-print(is_balanced(code2)) 
+# print(is_balanced(code1)) 
+# print(is_balanced(code2)) 
+
 
 # Problem 5: Overflowing With Gold
 def find_treasure_indices(gold_amounts, target):
@@ -84,9 +88,10 @@ target2 = 6
 gold_amounts3 = [3, 3]
 target3 = 6
 
-print(find_treasure_indices(gold_amounts1, target1))  
-print(find_treasure_indices(gold_amounts2, target2))  
-print(find_treasure_indices(gold_amounts3, target3))
+# print(find_treasure_indices(gold_amounts1, target1))  
+# print(find_treasure_indices(gold_amounts2, target2))  
+# print(find_treasure_indices(gold_amounts3, target3))
+
 
 # Problem 6: Organize the Pirate Crew
 def organize_pirate_crew(group_sizes):
@@ -102,8 +107,9 @@ def organize_pirate_crew(group_sizes):
 group_sizes1 = [3, 3, 3, 3, 3, 1, 3]
 group_sizes2 = [2, 1, 3, 3, 3, 2]
 
-print(organize_pirate_crew(group_sizes1))
-print(organize_pirate_crew(group_sizes2)) 
+# print(organize_pirate_crew(group_sizes1))
+# print(organize_pirate_crew(group_sizes2)) 
+
 
 # Problem 7: Minimum Number of Steps to Match Treasure Maps
 def min_steps_to_match_maps(map1, map2):
@@ -122,9 +128,10 @@ map2_2 = "huntgold"
 map1_3 = "anagram"
 map2_3 = "mangaar"
 
-print(min_steps_to_match_maps(map1_1, map2_1))
-print(min_steps_to_match_maps(map1_2, map2_2))
-print(min_steps_to_match_maps(map1_3, map2_3))
+# print(min_steps_to_match_maps(map1_1, map2_1))
+# print(min_steps_to_match_maps(map1_2, map2_2))
+# print(min_steps_to_match_maps(map1_3, map2_3))
+
 
 # Problem 8: Counting Pirates' Action Minutes
 
