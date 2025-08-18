@@ -125,3 +125,41 @@ print(subdomain_visits(cpdomains2))
 """
 
 # Problem 5: Beautiful Collection
+def beauty_sum(collection):
+    res = 0
+    n = len(collection)
+    for i in range(n):
+        count = collections.defaultdict(int)
+        for j in range(i,n):
+            count[collection[j]] += 1
+            freq = count.values()
+            beauty = max(freq) - min(freq)
+            res += beauty
+    return res
+
+"""
+print(beauty_sum("aabcb")) 
+print(beauty_sum("aabcbaa"))
+"""
+
+# Problem 6: Counting Divisible Collections in the Gallery
+def count_divisible_collections(collection_sizes, k):
+    subarray = set()
+    n = len(collection_sizes)
+    for i in range(n):
+        total = 0
+        for j in range(i,n):
+            total += collection_sizes[j]
+            if total % k == 0:
+                subarray.add(tuple(collection_sizes[i:j+1]))
+    return len(subarray)
+
+nums1 = [4, 5, 0, -2, -3, 1]
+k1 = 5
+nums2 = [5]
+k2 = 9
+
+"""
+print(count_divisible_collections(nums1, k1))  
+print(count_divisible_collections(nums2, k2))  
+"""
