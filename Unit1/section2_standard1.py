@@ -71,3 +71,118 @@ num = 4
 print(sum_of_digits(num))
 """
 
+# Problem 5: Bouncy, Flouncy, Trouncy, Pouncy
+def final_value_after_operations(operations):
+    tigger = 1
+    for operation in operations:
+        if operation in ["bouncy", "flouncy"]:
+            tigger += 1
+        elif operation in ["trouncy", "pouncy"]:
+            tigger -= 1
+    return tigger
+
+"""
+operations = ["trouncy", "flouncy", "flouncy"]
+print(final_value_after_operations(operations))
+
+operations = ["bouncy", "bouncy", "flouncy"]
+print(final_value_after_operations(operations))
+"""
+
+# Problem 6: Acronym
+def is_acronym(words, s):
+    acronym = ""
+    for word in words:
+        acronym += word[0]
+    return acronym == s
+
+"""
+words = ["christopher", "robin", "milne"]
+s = "crm"
+print(is_acronym(words, s)) 
+"""
+
+# Problem 7: Good Things Come in Threes
+def make_divisible_by_3(nums):
+    res = 0
+    for num in nums:
+        if num % 3 != 0:
+            res += 1
+    return res
+
+"""
+nums = [1, 2, 3, 4]
+print(make_divisible_by_3(nums))
+
+nums = [3, 6, 9]
+print(make_divisible_by_3(nums))
+"""
+
+# Problem 8: Exclusive Elements
+def exclusive_elemts(lst1, lst2):
+    return list(set(lst1) ^ set(lst2))
+
+"""
+lst1 = ["pooh", "roo", "piglet"]
+lst2 = ["piglet", "eeyore", "owl"]
+print(exclusive_elemts(lst1, lst2))
+
+lst1 = ["pooh", "roo"]
+lst2 = ["piglet", "eeyore", "owl", "kanga"]
+print(exclusive_elemts(lst1, lst2))
+
+lst1 = ["pooh", "roo", "piglet"]
+lst2 = ["pooh", "roo", "piglet"]
+print(exclusive_elemts(lst1, lst2))
+"""
+
+# Problem 9: Merge Strings Alternately
+def merge_alternately(word1, word2):
+    res = "" 
+    i = 0
+    while i < len(word1) and i < len(word2):
+        res += word1[i] + word2[i]
+        i += 1
+    
+    if i < len(word1):
+        res += word1[i:]
+    if i < len(word2):
+        res += word2[i:]
+    return res
+
+"""
+word1 = "wol"
+word2 = "oze"
+print(merge_alternately(word1, word2))
+
+word1 = "hfa"
+word2 = "eflump"
+print(merge_alternately(word1, word2))
+
+word1 = "eyre"
+word2 = "eo"
+print(merge_alternately(word1, word2))
+"""
+
+# Problem 10: Eeyore's House
+def good_pairs(pile1, pile2, k):
+    res = 0
+    for i in pile1:
+        for j in pile2:
+            if i < j * k:
+                continue
+            elif i % (j * k) == 0:
+                res += 1
+    return res
+
+"""
+pile1 = [1, 3, 4]
+pile2 = [1, 3, 4]
+k = 1
+print(good_pairs(pile1, pile2, k))
+
+pile1 = [1, 2, 4, 12]
+pile2 = [2, 4]
+k = 3
+print(good_pairs(pile1, pile2, k))
+"""
