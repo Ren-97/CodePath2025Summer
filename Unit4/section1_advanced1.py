@@ -8,6 +8,7 @@ def filter_sustainable_brands(brands, criterion):
     return res
 # O(n*m)
 # O(n)
+"""
 brands = [
     {"name": "EcoWear", "criteria": ["eco-friendly", "ethical labor"]},
     {"name": "FastFashion", "criteria": ["cheap materials", "fast production"]},
@@ -31,6 +32,7 @@ brands_3 = [
 print(filter_sustainable_brands(brands, "eco-friendly"))
 print(filter_sustainable_brands(brands_2, "ethical labor"))
 print(filter_sustainable_brands(brands_3, "carbon-neutral"))
+"""
 
 # Problem 2: Eco-Friendly Materials
 from collections import defaultdict 
@@ -43,6 +45,7 @@ def count_material_usage(brands):
 # O(n*m)
 # O(k)
 
+"""
 brands = [
     {"name": "EcoWear", "materials": ["organic cotton", "recycled polyester"]},
     {"name": "GreenThreads", "materials": ["organic cotton", "bamboo"]},
@@ -64,6 +67,7 @@ brands_3 = [
 print(count_material_usage(brands))
 print(count_material_usage(brands_2))
 print(count_material_usage(brands_3))
+"""
 
 # Problem 3: Fashion Trends
 def find_trending_materials(brands):
@@ -76,6 +80,7 @@ def find_trending_materials(brands):
 #O(m*n+k)
 #O(k)
 
+"""
 brands = [
     {"name": "EcoWear", "materials": ["organic cotton", "recycled polyester"]},
     {"name": "GreenThreads", "materials": ["organic cotton", "bamboo"]},
@@ -97,6 +102,7 @@ brands_3 = [
 print(find_trending_materials(brands))
 print(find_trending_materials(brands_2))
 print(find_trending_materials(brands_3))
+"""
 
 # Problem 4: Fabric Pairing
 def find_best_fabric_pair(fabrics, budget):
@@ -117,6 +123,7 @@ def find_best_fabric_pair(fabrics, budget):
 # O(n^2)
 # O(1)
 
+"""
 fabrics = [("Organic Cotton", 30), ("Recycled Polyester", 20), ("Bamboo", 25), ("Hemp", 15)]
 fabrics_2 = [("Linen", 50), ("Recycled Wool", 40), ("Tencel", 30), ("Organic Cotton", 60)]
 fabrics_3 = [("Linen", 40), ("Hemp", 35), ("Recycled Polyester", 25), ("Bamboo", 20)]
@@ -124,13 +131,14 @@ fabrics_3 = [("Linen", 40), ("Hemp", 35), ("Recycled Polyester", 25), ("Bamboo",
 print(find_best_fabric_pair(fabrics, 45))
 print(find_best_fabric_pair(fabrics_2, 70))
 print(find_best_fabric_pair(fabrics_3, 60))
+"""
 
 # Problem 5: Fabric Stacks
 def organize_fabrics(fabrics):
     sorted_fabrics = sorted(fabrics, key=lambda x:x[1], reverse=True)
     return [fabrics[0] for fabrics in sorted_fabrics]
 
-
+"""
 fabrics = [("Organic Cotton", 8), ("Recycled Polyester", 6), ("Bamboo", 7), ("Hemp", 9)]
 fabrics_2 = [("Linen", 5), ("Recycled Wool", 9), ("Tencel", 7), ("Organic Cotton", 6)]
 fabrics_3 = [("Linen", 4), ("Hemp", 8), ("Recycled Polyester", 5), ("Bamboo", 7)]
@@ -138,12 +146,14 @@ fabrics_3 = [("Linen", 4), ("Hemp", 8), ("Recycled Polyester", 5), ("Bamboo", 7)
 print(organize_fabrics(fabrics))
 print(organize_fabrics(fabrics_2))
 print(organize_fabrics(fabrics_3))
+"""
 
 # Problem 6: Supply Chain
 def process_supplies(supplies):
     sorted_supplies = sorted(supplies, key=lambda x: -x[1])
     return [name for name, _ in sorted_supplies]
 
+"""
 supplies = [("Organic Cotton", 3), ("Recycled Polyester", 2), ("Bamboo", 4), ("Hemp", 1)]
 supplies_2 = [("Linen", 2), ("Recycled Wool", 5), ("Tencel", 3), ("Organic Cotton", 4)]
 supplies_3 = [("Linen", 3), ("Hemp", 2), ("Recycled Polyester", 5), ("Bamboo", 1)]
@@ -151,6 +161,7 @@ supplies_3 = [("Linen", 3), ("Hemp", 2), ("Recycled Polyester", 5), ("Bamboo", 1
 print(process_supplies(supplies))
 print(process_supplies(supplies_2))
 print(process_supplies(supplies_3))
+"""
 
 # Problem 7: Calculate Fabric Waste
 def calculate_fabric_waste(items, fabric_rolls):
