@@ -1,3 +1,0 @@
-def find_cruise_length(cruise_lengths, vacation_length):
-
-    left, right = 0, len(cur)

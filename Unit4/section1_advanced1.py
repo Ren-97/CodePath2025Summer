@@ -165,3 +165,50 @@ print(process_supplies(supplies_3))
 
 # Problem 7: Calculate Fabric Waste
 def calculate_fabric_waste(items, fabric_rolls):
+    total = 0
+    for i, item in enumerate(items):
+        total += fabric_rolls[i] - item[1]
+    return total
+
+items = [("T-Shirt", 2), ("Pants", 3), ("Jacket", 5)]
+fabric_rolls = [5, 5, 5]
+
+items_2 = [("Dress", 4), ("Skirt", 3), ("Blouse", 2)]
+fabric_rolls2 = [4, 4, 4]
+
+items_3 = [("Jacket", 6), ("Shirt", 2), ("Shorts", 3)]
+fabric_rolls3 = [7, 5, 5]
+# O(n) time
+# O(1) space
+
+"""
+print(calculate_fabric_waste(items, fabric_rolls))
+print(calculate_fabric_waste(items_2, fabric_rolls2))
+print(calculate_fabric_waste(items_3, fabric_rolls3))
+"""
+
+# Problem 8: Fabric Roll Organizer
+def organize_fabric_rolls(fabric_rolls):
+    pair = []
+    sorted_fabric = sorted(fabric_rolls) #nlogn``
+    n = len(sorted_fabric)
+    i = 0
+    while i < n-1:
+        pair.append((sorted_fabric[i], sorted_fabric[i+1]))
+        i += 2
+    
+    if n % 2 == 1:
+        pair.append(sorted_fabric[-1])
+        return pair
+    else:
+        return pair
+    
+fabric_rolls = [15, 10, 25, 30, 22]
+fabric_rolls_2 = [5, 8, 10, 7, 12, 14]
+fabric_rolls_3 = [40, 10, 25, 15, 30]
+
+"""
+print(organize_fabric_rolls(fabric_rolls))
+print(organize_fabric_rolls(fabric_rolls_2))
+print(organize_fabric_rolls(fabric_rolls_3))
+"""

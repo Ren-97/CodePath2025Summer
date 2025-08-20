@@ -30,8 +30,10 @@ def edit_dna_sequence(dna_strand, m, n):
         cur = cur.next
     return dna_strand
 
-#dna_strand = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6, Node(7, Node(8, Node(9, Node(10, Node(11, Node(12, Node(13)))))))))))))
-#print_linked_list(edit_dna_sequence(dna_strand, 2, 3))
+"""
+dna_strand = Node(1, Node(2, Node(3, Node(4, Node(5, Node(6, Node(7, Node(8, Node(9, Node(10, Node(11, Node(12, Node(13)))))))))))))
+print_linked_list(edit_dna_sequence(dna_strand, 2, 3))
+"""
 
 # Problem 2: Protein Folding Loop Detection
 class Node:
@@ -54,9 +56,11 @@ def cycle_length(protein):
         fast = fast.next
     return res
 
-#protein_head = Node('Ala', Node('Gly', Node('Leu', Node('Val'))))
-#protein_head.next.next.next.next = protein_head.next 
-#print(cycle_length(protein_head))
+"""
+protein_head = Node('Ala', Node('Gly', Node('Leu', Node('Val'))))
+protein_head.next.next.next.next = protein_head.next 
+print(cycle_length(protein_head))
+"""
 
 # Problem 3: Segmenting Protein Chains for Analysis
 class Node:
@@ -104,16 +108,18 @@ def split_protein_chain(protein, k):
         res.append(head)
     return res
 
-#protein1 = Node('Ala', Node('Gly', Node('Leu', Node('Val', Node('Pro', Node('Ser', Node('Thr', Node('Cys'))))))))
-#protein2 = Node('Ala', Node('Gly', Node('Leu', Node('Val'))))
-#
-#parts = split_protein_chain(protein1, 3)
-#for part in parts:
-#    print_linked_list(part)
-#
-#parts = split_protein_chain(protein2, 5)
-#for part in parts:
-#   print_linked_list(part)
+"""
+protein1 = Node('Ala', Node('Gly', Node('Leu', Node('Val', Node('Pro', Node('Ser', Node('Thr', Node('Cys'))))))))
+protein2 = Node('Ala', Node('Gly', Node('Leu', Node('Val'))))
+
+parts = split_protein_chain(protein1, 3)
+for part in parts:
+    print_linked_list(part)
+
+parts = split_protein_chain(protein2, 5)
+for part in parts:
+   print_linked_list(part)
+"""
 
 # Problem 4: Maximum Protein Pair Stability
 class Node:
@@ -150,11 +156,13 @@ def max_protein_pair_stability(head):
         second = second.next
     return max_sum
 
+"""
 head1 = Node(5, Node(4, Node(2, Node(1))))
 head2 = Node(4, Node(2, Node(2, Node(3))))
 
 print(max_protein_pair_stability(head1))
 print(max_protein_pair_stability(head2))
+"""
 
 # Problem 5: Grouping Experiments
 class Node:
@@ -185,8 +193,10 @@ def odd_even_experiments(exp_results):
     odd.next = evenhead
     return exp_results
 
-#experiment_results1 = Node(1, Node(2, Node(3, Node(4, Node(5)))))
-#experiment_results2 = Node(2, Node(1, Node(3, Node(5, Node(6, Node(4, Node(7)))))))
-#
-#print_linked_list(odd_even_experiments(experiment_results1))
-#print_linked_list(odd_even_experiments(experiment_results2))
+"""
+experiment_results1 = Node(1, Node(2, Node(3, Node(4, Node(5)))))
+experiment_results2 = Node(2, Node(1, Node(3, Node(5, Node(6, Node(4, Node(7)))))))
+
+print_linked_list(odd_even_experiments(experiment_results1))
+print_linked_list(odd_even_experiments(experiment_results2))
+"""
