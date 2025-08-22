@@ -53,6 +53,7 @@ def build_cookie_tree(descriptions):
         if flavor not in child_nodes:
             return nodes[flavor]
 
+"""
 descriptions1 = [
     ["Chocolate Chip", "Peanut Butter", 1],
     ["Chocolate Chip", "Oatmeal Raisin", 0],
@@ -65,8 +66,9 @@ descriptions2 = [
 ]
 
 # Using print_tree() function included at top of page
-#print_tree(build_cookie_tree(descriptions1))
-#print_tree(build_cookie_tree(descriptions2))
+print_tree(build_cookie_tree(descriptions1))
+print_tree(build_cookie_tree(descriptions2))
+"""
 
 # Problem 2: Cookie Sum
 from collections import deque 
@@ -123,13 +125,15 @@ def count_cookie_paths(root, target_sum):
    
     return count_cookie_paths(root.left, target_sum - root.val) + count_cookie_paths(root.right, target_sum - root.val)
 
+"""
 cookie_nums = [10, 5, 8, 3, 7, 12, 4]
 cookies1 = build_tree(cookie_nums)
 cookie_nums = [8, 4, 12, 2, 6, None, 10]
 cookies2 = build_tree(cookie_nums)
 
-#print(count_cookie_paths(cookies1, 22)) 
-#print(count_cookie_paths(cookies2, 14))
+print(count_cookie_paths(cookies1, 22)) 
+print(count_cookie_paths(cookies2, 14))
+"""
 
 # Problem 3: Most Popular Cookie Combo
 import collections
@@ -162,11 +166,15 @@ def most_popular_cookie_combo(root):
             res.append(key)
     return res
 
+"""
 cookies1 = TreeNode(5, TreeNode(2), TreeNode(-3))
 cookies2 = TreeNode(5, TreeNode(2), TreeNode(-5))
 
-#print(most_popular_cookie_combo(cookies1))  
-#print(most_popular_cookie_combo(cookies2))  
+print(most_popular_cookie_combo(cookies1))  
+print(most_popular_cookie_combo(cookies2))
+"""
+
+# Problem 4: Convert Binary Tree of Bakery Orders to Linked List
 class TreeNode:
     def __init__(self, value, left=None, right=None):
         self.val = value
@@ -191,17 +199,19 @@ def flatten_orders(orders):
     preorder(orders)
     return orders
 
+"""
 items = ["Croissant", "Cupcake", "Bagel", "Cake", "Pie", None, "Blondies"]
 orders = build_tree(items)
-#print_tree(flatten_orders(orders))
+print_tree(flatten_orders(orders))
+"""
 
+# Problem 5: Check Bakery Order Completeness
 class TreeNode:
     def __init__(self, value, left=None, right=None):
         self.val = value
         self.left = left
         self.right = right
 
-# Problem 5: Check Bakery Order Completeness
 def is_complete(root):
     if not root:
         return True
@@ -221,13 +231,15 @@ def is_complete(root):
             end = True
     return True
 
+"""
 items1 = ["Croissant", "Cupcake", "Bagel", "Cake", "Pie", "Blondies"]
 order1 = build_tree(items1)
 items2 = ["Croissant", "Cupcake", "Bagel", "Cake", "Pie", None, "Blondies"]
 order2 = build_tree(items2)
 
-#print(is_complete(order1))
-#print(is_complete(order2))
+print(is_complete(order1))
+print(is_complete(order2))
+"""
 
 # Problem 6: Vertical Bakery Display
 class TreeNode:
@@ -259,6 +271,7 @@ def vertical_inventory_display(root):
         res.append(table[i])
     return res
 
+"""
 inventory_items = ["Bread", "Croissant", "Donut", None, None, "Bagel", "Tart"]
 inventory1 = build_tree(inventory_items)
 
@@ -267,4 +280,5 @@ print(vertical_inventory_display(inventory1))
 inventory_items = ["Bread", "Croissant", "Donut", "Muffin", "Scone", "Bagel", "Tart", None, None, "Pie", None, "Cake"]
 inventory2 = build_tree(inventory_items)
 
-print(vertical_inventory_display(inventory2))  
+print(vertical_inventory_display(inventory2))
+"""  

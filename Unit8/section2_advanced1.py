@@ -50,10 +50,12 @@ def sort_plants(collection):
     inorder(collection)
     return res
 
-#values = [(3, "Monstera"), (1, "Pothos"), (5, "Witchcraft Orchid"), None, (2, "Spider Plant"), (4, "Hoya Motoskei")]
-#collection = build_tree(values)
+"""
+values = [(3, "Monstera"), (1, "Pothos"), (5, "Witchcraft Orchid"), None, (2, "Spider Plant"), (4, "Hoya Motoskei")]
+collection = build_tree(values)
 
-#print(sort_plants(collection))
+print(sort_plants(collection))
+"""
 
 # Problem 2: Flower Finding 
 def __init__(self, value, left=None, right=None):
@@ -70,12 +72,14 @@ def find_flower(inventory, name):
         return find_flower(inventory.right, name)
     else:
         return find_flower(inventory.left, name)
-    
+
+"""    
 values = ["Rose", "Lily", "Tulip", "Daisy", "Lilac", None, "Violet"]
 garden = build_tree(values)
 
-#print(find_flower(garden, "Lilac"))  
-#print(find_flower(garden, "Sunflower")) 
+print(find_flower(garden, "Lilac"))  
+print(find_flower(garden, "Sunflower"))
+""" 
 
 #Problem 3: Adding a New Plant to the Collection
 # Tree Node class
@@ -110,13 +114,14 @@ def add_plant(collection, name):
     else:
         collection.left = add_plant(collection.left, name)
     return collection
-    
-# Using build_tree() function at the top of page
-#values = ["Money Tree", "Fiddle Leaf Fig", "Snake Plant"]
-#collection = build_tree(values)
 
+"""    
+# Using build_tree() function at the top of page
+values = ["Money Tree", "Fiddle Leaf Fig", "Snake Plant"]
+collection = build_tree(values)
 # Using print_tree() function at the top of page
-#print_tree(add_plant(collection, "Aloe"))
+print_tree(add_plant(collection, "Aloe"))
+"""
 
 #Problem 4: Remove Plant
 class TreeNode:
@@ -148,12 +153,14 @@ def find_max(node):
         node = node.right
     return node
 
+"""
 # Using build_tree() function at the top of page
-#values = ["Money Tree", "Hoya", "Pilea", None, "Ivy", "Orchid", "ZZ Plant"]
-#collection = build_tree(values)
+values = ["Money Tree", "Hoya", "Pilea", None, "Ivy", "Orchid", "ZZ Plant"]
+collection = build_tree(values)
 
 # Using print_tree() function at the top of page
-#print_tree(remove_plant(collection, "Pilea"))
+print_tree(remove_plant(collection, "Pilea"))
+"""
 
 # Problem 5: Find Most Common Plants in Collection
 class TreeNode:
@@ -178,12 +185,14 @@ def find_most_common(root):
     max_count = max(count.values())
     return [plant for plant, freq in count.items() if freq == max_count]
 
-#values = ["Hoya", None, "Pothos", "Pothos"]
-#collection1 = build_tree(values)
-#print(find_most_common(collection1))
-#values = ["Hoya", "Aloe", "Pothos", "Aloe", None, "Pothos"]
-#collection2 = build_tree(values)
-#print(find_most_common(collection2))
+"""
+values = ["Hoya", None, "Pothos", "Pothos"]
+collection1 = build_tree(values)
+print(find_most_common(collection1))
+values = ["Hoya", "Aloe", "Pothos", "Aloe", None, "Pothos"]
+collection2 = build_tree(values)
+print(find_most_common(collection2))
+"""
 
 # Problem 6: Split Collection
 class TreeNode:
@@ -208,12 +217,14 @@ def split_collection(collection, target):
         smaller_subtree, larger_subtree = split_collection(collection.left, target)
         collection.left = larger_subtree
         return smaller_subtree, collection
-    
-#values = ["Money Tree", "Hoya", "Pilea", "Aloe", "Ivy", "Orchid", "ZZ Plant"]
-#collection = build_tree(values)
-#left, right = split_collection(collection, "Hoya")
-#print_tree(left)
-#print_tree(right)
+
+"""    
+values = ["Money Tree", "Hoya", "Pilea", "Aloe", "Ivy", "Orchid", "ZZ Plant"]
+collection = build_tree(values)
+left, right = split_collection(collection, "Hoya")
+print_tree(left)
+print_tree(right)
+"""
 
 # Problem 7: Pruning Pothos
 class TreeNode:
@@ -231,14 +242,15 @@ def prune(root, target):
         return None
     return root
 
+"""
+values = ["Healthy", "Dying", "Healthy", "Dying", None, "Dying", "New Growth"]
+pothos1 = build_tree(values)
+print_tree(prune(pothos1, "Dying"))
 
-#values = ["Healthy", "Dying", "Healthy", "Dying", None, "Dying", "New Growth"]
-#pothos1 = build_tree(values)
-#print_tree(prune(pothos1, "Dying"))
-#
-#values = ["Healthy", "Aphids", "Aphids", "Aphids", "New Growth"]
-#pothos2 = build_tree(values)
-#print_tree(prune(pothos2, "Aphids"))
+values = ["Healthy", "Aphids", "Aphids", "Aphids", "New Growth"]
+pothos2 = build_tree(values)
+print_tree(prune(pothos2, "Aphids"))
+"""
     
 # Problem 8: Find the Lowest Common Ancestor in a Plant Tree Based on Species Names
 class TreeNode():
@@ -261,7 +273,8 @@ def lca(root, p, q):
         return root
     else:
         return left or right
-    
+
+"""    
 fern = TreeNode("fern")
 cactus = TreeNode("cactus", fern)
 rose = TreeNode("rose", fern)
@@ -276,3 +289,8 @@ rose.left, rose.right = lily, oak
 
 print(lca(fern, "cactus", "rose").val)
 print(lca(fern, "bamboo", "oak").val)
+"""
+
+# Breakout 42
+# Angelyn Domingo, Amanuel Yilma, Divyansh Gupta, Ren Huang
+# Let's connect on slack :DDD, thanks for all the help
