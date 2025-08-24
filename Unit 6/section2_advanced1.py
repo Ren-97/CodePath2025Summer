@@ -128,8 +128,29 @@ def print_linked_list(head):
     print()
 
 def shuffle_playlist(playlist):
-     
+    slow, fast = playlist, playlist.next
+    while fast and fast.next:
+          slow = slow.next
+          fast = fast.next.next
+    prev = None
+    cur = slow.next
+    slow.next = None
 
+    while cur:
+         temp = cur.next
+         cur.next = prev
+         prev = cur
+         cur = temp
+    
+    first, second = playlist, prev
+    while second:
+         temp1, temp2 = first.next, second.next
+         first.next = second
+         second.next = temp1
+         first, second = temp1, temp2
+    return playlist     
+
+"""
 playlist1 = Node(1, Node(2, Node(3, Node(4))))
 
 playlist2 = Node(('Respect', 'Aretha Franklin'),
@@ -140,3 +161,102 @@ playlist2 = Node(('Respect', 'Aretha Franklin'),
 
 print_linked_list(shuffle_playlist(playlist1))
 print_linked_list(shuffle_playlist(playlist2))
+"""
+
+# Problem 4: Shared Music Taste
+class Node:
+	def __init__(self, value, next=None):
+		self.value = value
+		self.next = next
+
+# For testing
+def print_linked_list(head):
+    current = head
+    while current:
+        print(current.value, end=" -> " if current.next else "")
+        current = current.next
+    print()
+
+def playlist_overlap(playlist_a, playlist_b):
+    a, b = playlist_a, playlist_b
+    while a != b:
+         a = a.next if a else playlist_b
+         b = b.next if b else playlist_a
+    return a
+
+"""
+playlist_a = Node('Song A', Node('Song B'))
+playlist_b = Node('Song X', Node('Song Y', Node('Song Z')))
+shared_segment = Node('Song M', Node('Song N', Node('Song O')))
+
+playlist_a.next.next = shared_segment
+playlist_b.next.next.next = shared_segment
+
+print((playlist_overlap(playlist_a, playlist_b)).value)
+"""
+
+# Problem 5: Double Listening Count
+class Node:
+	def __init__(self, value, next=None):
+		self.value = value
+		self.next = next
+
+# For testing
+def print_linked_list(head):
+    current = head
+    while current:
+        print(current.value, end=" -> " if current.next else "")
+        current = current.next
+    print()
+
+# Method 1
+def double_listeners(monthly_listeners):
+    prev, cur = None, monthly_listeners
+    while cur:
+        temp = cur.next
+        cur.next = prev
+        prev = cur
+        cur = temp
+
+    cur = prev
+    carry = 0
+    while cur:
+        total = cur.value * 2 + carry
+        carry = total // 10
+        cur.value = total % 10
+        if not cur.next and carry:
+            cur.next = Node(carry)
+            break
+        cur = cur.next
+
+    prev2 , cur = None, prev  
+    while cur:
+        temp = cur.next
+        cur.next = prev2
+        prev2 = cur
+        cur = temp 
+    return prev2
+
+# Method 2
+def double_listeners(monthly_listeners):
+    def dfs(node):
+        if not node:
+             return 0
+        carry = dfs(node.next)
+        total = node.value * 2 + carry
+        node.value = total % 10
+        return total // 10
+    
+    carry = dfs(monthly_listeners)
+    if carry:
+        new_head = Node(carry, monthly_listeners)
+        return new_head
+    return monthly_listeners
+
+"""    
+monthly_listeners1 = Node(1, Node(8, Node(9))) # 189
+monthly_listeners2 = Node(9, Node(9, Node(9))) # 999
+
+print_linked_list(double_listeners(monthly_listeners1))
+print_linked_list(double_listeners(monthly_listeners2))
+"""
