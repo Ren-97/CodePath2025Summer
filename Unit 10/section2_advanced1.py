@@ -139,3 +139,10 @@ print(can_complete_flight_training(2, flight_prerequisites_2))
 """
 
 # Problem 5: Reorient Flight Routes
+def min_reorient_flight_routes(n, connections):
+
+
+n = 6
+connections = [[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]
+
+print(min_reorient_flight_routes(n, connections))
