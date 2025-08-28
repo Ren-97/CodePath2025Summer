@@ -139,10 +139,67 @@ print(can_complete_flight_training(2, flight_prerequisites_2))
 """
 
 # Problem 5: Reorient Flight Routes
+# O(n^2) time, not good 
 def min_reorient_flight_routes(n, connections):
+    start_from_0 = 0
+    n = len(connections)
+    q = []
+    for i in range(n):
+        if connections[i][0] == 0:
+            q.append(connections[i][1])
+            start_from_0 += 1
+    while q:
+        new_q = []
+        for i in range(n):
+            if connections[i][0] in q:
+                new_q.append(connections[i][1])
+                start_from_0 += 1
+        q = new_q
+    return n - start_from_0
 
+def min_reorient_flight_routes(n, connections):
+    graph = defaultdict(list)
+    for u, v in connections:
+        graph[u].append((v,1))
+        graph[v].append((u,0))
+    
+    visited = set()
+    visited.add(0)
+    def dfs(node):
+        change = 0
+        for nei, direction in graph[node]:
+            if nei not in visited:
+                if direction == 1:
+                    change += 1
+                visited.add(node)
+                change += dfs(nei)
+        return change
+    return dfs(0)
 
+"""
 n = 6
 connections = [[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]
 
 print(min_reorient_flight_routes(n, connections))
+"""
+
+# Problem 6: Find All Flight Routes
+def find_all_flight_routes(flight_routes):
+    n = len(flight_routes)
+    res = []
+    def dfs(node, path):
+        if node == n - 1:
+            res.append(path[:])
+            return
+        for nei in flight_routes[node]:
+            path.append(nei)
+            dfs(nei, path)
+            path.pop()
+    dfs(0,[0])
+    return res
+
+"""
+flight_routes_1 = [[1, 2], [3], [3], []]
+
+print(find_all_flight_routes(flight_routes_1))
+"""
